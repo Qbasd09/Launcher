@@ -15,6 +15,8 @@ while vPlane < targetV:
 
     i = L/h
 
+
+
     vmax = (2*mCounterweight*g*h/mPlane)**0.5
     
     t = (2*h/g)**0.5
@@ -28,9 +30,12 @@ while vPlane < targetV:
     # time.sleep(0.5)
 
     if vPlane > vmax:
-        print(f"The maximum possible velocity is {vPlaneMax} m/s")
+        print(f"The maximum possible velocity is {vPlaneMax:.2f} m/s")
+        print(f"It is achieved with a transfer ratio of {iMax:.2f} at a counterweight fall distance of {h:.2f} m")
         break
     elif vPlane < targetV:
+        hMax = h
+        iMax = i
         h -= 0.01
         vPlaneMax = vPlane
         vCounterweightMax = vCounterweight
