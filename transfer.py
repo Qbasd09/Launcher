@@ -1,5 +1,3 @@
-import time
-
 L = 2
 h = 1.5
 targetV = 10
