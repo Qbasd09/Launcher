@@ -8,7 +8,6 @@ vPlane = 0
 mPlane = 0.035
 mCounterweight = 0.2
 
-
 while vPlane < targetV:
     
     print(h)
@@ -24,8 +23,6 @@ while vPlane < targetV:
     vPlane = vCounterweight*i
 
     print(f"plane v {vPlane} counterv {vCounterweight} vmax {vmax}")
-
-    # time.sleep(0.5)
 
     if vPlane > vmax:
         print(f"The maximum possible velocity is {vPlaneMax:.2f} m/s")
