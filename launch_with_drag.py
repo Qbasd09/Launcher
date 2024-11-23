@@ -35,4 +35,6 @@ for i in data:
 
         return lift
     
-    print(F_lift(Cl, t))
+    a_vertical = g + F_lift(Cl,t)/m
+
+    print(f"the vertical acceleration {a_vertical}")
