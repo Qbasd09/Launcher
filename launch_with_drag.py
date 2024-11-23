@@ -8,7 +8,7 @@ A = 0.03
 g = -9.81
 m = 0.035
 F_g = m * g
-coefficient = ro * A /(2 * m)
+coef = ro * A /(2 * m)
 
 
 with open('alpha_to_cl.csv', newline='') as f:
@@ -26,7 +26,7 @@ for i in data:
     t = np.linspace(0, 50, 500)
 
     def vHor_t(Cd, t):
-        speed = 1 / (coefficient * t * Cd + 1/vHor)
+        speed = 1 / (coef * t * Cd + 1/vHor)
     
         return speed    
 
