@@ -2,10 +2,11 @@ import math
 
 v = 9
 ro = 1.204
-A = 0.3
+A = 0.03
 g = -9.81
 m = 0.035
-Alpha = -2
+F_g = m * g
+Alpha = 0
 
 while Alpha <= 19:
 
@@ -15,10 +16,7 @@ while Alpha <= 19:
 
     F_lift = Cl * ro * vHor**2 * A * 0.5
 
-    print(vHor)
-
-    print(f"For an angle {Alpha} degrees, the lift is {F_lift} N, cl {Cl}")
-
-
+    if Alpha == 0:
+        print(f"Lift is {F_lift}")
 
     Alpha += 0.25
