@@ -12,13 +12,39 @@ with open('alpha_to_cl.csv', newline='') as f:
     reader = csv.reader(f)
     data = list(reader)
 
+
 for i in data:
     Alpha = float(i[0])
     Cl = float(i[1])
 
-    RadAlpha = math.radians(Alpha)
-    vHor = v * math.cos(RadAlpha)
+    F_lift = 1000 
+    v = 9
 
-    F_lift = Cl * ro * vHor**2 * A * 0.5
+    while abs(F_g) < F_lift:
+        RadAlpha = math.radians(Alpha)
+        vHor = v * math.cos(RadAlpha)
 
-    print(f"The lift from angle {Alpha} is {F_lift} N")
+        F_lift = Cl * ro * vHor**2 * A * 0.5
+
+        v -= 0.01
+
+    a = F_lift/m
+    a_v = abs(g+a)
+    
+    if Alpha == 0:
+        F_lift0 = F_lift
+        a_0 = a
+        a_v0 = a_v
+
+    h0 = 1.5
+    h = 0
+    vVer = v * math.sin(RadAlpha)
+    tLaunchAngle = 5
+
+    h1 = h0 + vVer * tLaunchAngle - 0.5 * a_v * tLaunchAngle**2
+    vVer1 = 0
+    d1 = vHor * tLaunchAngle
+
+    d = vHor*((vVer1 + (vVer1**2 + 2 * h1 * a_v0)**0.5)/a_v0) + d1
+
+    print(f"{Alpha:.2f}, {h1:.2f}, {a_v:.2f}, {h1:.2f}, {d1:.2f}, {d:.2f}, {vHor:.2f}, {vVer:.2f}")
