@@ -15,8 +15,6 @@ while vPlane < targetV:
 
     i = L/h
 
-
-
     vmax = (2*mCounterweight*g*h/mPlane)**0.5
     
     t = (2*h/g)**0.5
