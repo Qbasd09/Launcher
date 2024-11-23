@@ -1,7 +1,6 @@
 import math
 import csv
 
-v = 9
 ro = 1.204
 A = 0.03
 g = -9.81
@@ -18,7 +17,7 @@ for i in data:
     Cl = float(i[1])
 
     F_lift = 1000 
-    v = 9
+    v = 8
 
     while abs(F_g) < F_lift:
         RadAlpha = math.radians(Alpha)
@@ -39,7 +38,7 @@ for i in data:
     h0 = 1.5
     h = 0
     vVer = v * math.sin(RadAlpha)
-    tLaunchAngle = 5
+    tLaunchAngle = 2
 
     h1 = h0 + vVer * tLaunchAngle - 0.5 * a_v * tLaunchAngle**2
     vVer1 = 0
