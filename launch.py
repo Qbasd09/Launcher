@@ -1,4 +1,5 @@
 import math
+import csv
 
 v = 9
 ro = 1.204
@@ -6,17 +7,18 @@ A = 0.03
 g = -9.81
 m = 0.035
 F_g = m * g
-Alpha = 0
 
-while Alpha <= 19:
+with open('alpha_to_cl.csv', newline='') as f:
+    reader = csv.reader(f)
+    data = list(reader)
 
-    Cl = 0.000016666 * Alpha**4 - 0.000634738 * Alpha**3 + 0.000755963 * Alpha**2 + 0.142456 * Alpha + 0.292422
+for i in data:
+    Alpha = float(i[0])
+    Cl = float(i[1])
+
     RadAlpha = math.radians(Alpha)
     vHor = v * math.cos(RadAlpha)
 
     F_lift = Cl * ro * vHor**2 * A * 0.5
 
-    if Alpha == 0:
-        print(f"Lift is {F_lift}")
-
-    Alpha += 0.25
+    print(f"The lift from angle {Alpha} is {F_lift} N")
