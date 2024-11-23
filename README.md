@@ -16,4 +16,4 @@ If $v_{p} < v_{pmax}$ then the velocity is possible
 
 Target velocity $v_{p} = 10 ~ \frac{m}{s}$
 
-As seen from transfer.py, the target velocity is unachievable, the launch velocity for all further calculations is 9 m/s.
+As seen from transfer.py, the target velocity is unachievable, the launch velocity for all further calculations is $8 ~ m/s$, the reason will be explained in the next section.
