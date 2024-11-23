@@ -1,8 +1,8 @@
 import math
 
-v = 9.67
+v = 9
 ro = 1.204
-A = 0.309
+A = 0.3
 g = -9.81
 m = 0.035
 Alpha = -2
@@ -18,5 +18,7 @@ while Alpha <= 19:
     print(vHor)
 
     print(f"For an angle {Alpha} degrees, the lift is {F_lift} N, cl {Cl}")
+
+
 
     Alpha += 0.25
