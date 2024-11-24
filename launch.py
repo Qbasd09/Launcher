@@ -27,14 +27,14 @@ for i in data:
     
     h0 = 1.5
     h = 0
-    tLaunchAngle = 0.5
+    tLaunchAngle = 1
 
     d1 = vHor * tLaunchAngle
     h1 = h0 + vVer * tLaunchAngle
 
     vHor1 = 1 / (coef * tLaunchAngle * Cd + 1/vHor)
     vVer1 = 0
-    a = 0.5
+    a = 1
 
     t = (2 * h1/a)**0.5
 
