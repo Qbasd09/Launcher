@@ -45,7 +45,8 @@ for i in data:
 arr = np.array(angdist)
 
 plt.plot(arr[:, 0], arr[:, 1])
-plt.ylabel("Distance $m$")
-plt.xlabel("Angle")
+plt.title(f"Launch distance at v = {v} m/s")
+plt.ylabel("Distance ($m$)")
+plt.xlabel("Angle$\degree$")
 plt.grid(True)
 plt.savefig('graph.png')
