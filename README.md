@@ -17,3 +17,23 @@ If $v_{p} < v_{pmax}$ then the velocity is possible
 Target velocity $v_{p} = 10 ~ \frac{m}{s}$
 
 As seen from transfer.py, the target velocity is unachievable, the launch velocity will be $9.67 ~ \frac{m}{s}$.
+
+# Differential
+
+We can turn the drag force into a differential equation to let us know the exact horizontal velocity at any time,
+
+$F_{d}=\frac{1}{2}\rho v^2C_{d}A$
+
+$\frac{dv}{dt} = \frac{\frac{1}{2}\rho v^2C_{d}A}{m}$
+
+$\frac{1}{v^2}dv=\frac{\frac{1}{2}\rho C_{d}A}{m}dt$
+
+$\int\frac{1}{v^2} dv=\int\frac{\frac{1}{2}\rho C_{d}A}{m}dt$
+
+$\frac{1}{v} = \frac{\rho C_{d}A}{2m}t+c$
+
+$v(t) = \frac{1}{\frac{\rho C_{d}A}{2m}t+C}$  
+
+$C = \frac{1}{v_{0}}$ as $v(0)=v_{0}$
+
+$v(t) = \frac{1}{\frac{\rho C_{d}A}{2m}t+\frac{1}{v_{0}}}$ 
