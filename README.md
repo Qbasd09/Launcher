@@ -16,10 +16,4 @@ If $v_{p} < v_{pmax}$ then the velocity is possible
 
 Target velocity $v_{p} = 10 ~ \frac{m}{s}$
 
-As seen from transfer.py, the target velocity is unachievable, the launch velocity for all further calculations is $8 ~ \frac{m}{s}$, the reason will be explained in the next section.
-
-# Launching Distance
-
-## Concept
-
-First of all, assuming that the wing profile is the Clark Y, as it seems to be common for model airplanes, it is possible to find its coefficient of lift for differing angles of attack. The wing area is hand measured. When it comes to velocity, as we are supposed to ignore the drag force, using the maximum launching velocity would mean that for any AOT the wing would generate so much lift, that the plane would never land, because of this a loop is created to find the maximum velocity at which the plane is unable to overcome gravity. For the variables $\rho = 1.204 ~ \frac{kg}{m^3}$, wing area $A = 0.03 ~ m^2$, $g = -9.81 ~ \frac{m}{s^2}$, mass of the plane $m = 0.035 ~ kg$, Gravitational force $F_g = mg ~ N$
+As seen from transfer.py, the target velocity is unachievable, the launch velocity will be $9.67 ~ m/s$.
