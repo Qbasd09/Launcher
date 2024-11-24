@@ -42,8 +42,6 @@ for i in data:
 
     angdist.append([Alpha, d])
 
-    print(d1, h1, Cd, t, vHor1, Alpha)
-
 arr = np.array(angdist)
 
 plt.plot(arr[:, 0], arr[:, 1])
