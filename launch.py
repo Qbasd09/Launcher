@@ -8,7 +8,7 @@ A = 0.03
 m = 0.035
 coef = rho * A /(2 * m)
 
-with open('alpha_to_cl_full.csv', newline='') as f:
+with open('alpha_to_cl.csv', newline='') as f:
     reader = csv.reader(f)
     data = list(reader)
 
