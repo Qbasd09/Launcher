@@ -20,12 +20,14 @@ for i in data:
     F_lift = 1000 
     v = 8
 
+
     while abs(F_g) < F_lift:
+
         RadAlpha = math.radians(Alpha)
+        vVer = v * math.sin(RadAlpha)
         vHor = v * math.cos(RadAlpha)
-
         F_lift = Cl * ro * vHor**2 * A * 0.5
-
+        
         v -= 0.01
 
     a = F_lift/m
@@ -38,8 +40,7 @@ for i in data:
 
     h0 = 1.5
     h = 0
-    vVer = v * math.sin(RadAlpha)
-    tLaunchAngle = 2
+    tLaunchAngle = 0.5
 
     h1 = h0 + vVer * tLaunchAngle - 0.5 * a_v * tLaunchAngle**2
     vVer1 = 0
