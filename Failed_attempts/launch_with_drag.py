@@ -4,13 +4,13 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 v = 9.67
-ro = 1.204
+rho = 1.204
 A = 0.03
 g = -9.81
 m = 0.035
 h0 = 1.5
 F_g = m * g
-coef = ro * A /(2 * m)
+coef = rho * A /(2 * m)
 
 with open('alpha_to_cl.csv', newline='') as f:
     reader = csv.reader(f)
@@ -33,7 +33,7 @@ for i in data:
         return speed
 
     def F_lift(Cl, Cd, t):
-        lift = Cl * ro * vHor_t(Cd, t)**2 * A * 0.5
+        lift = Cl * rho * vHor_t(Cd, t)**2 * A * 0.5
 
         return lift
    

@@ -3,10 +3,10 @@ import csv
 import numpy as np
 import matplotlib.pyplot as plt
 
-ro = 1.204
+rho = 1.204
 A = 0.03
 m = 0.035
-coef = ro * A /(2 * m)
+coef = rho * A /(2 * m)
 
 with open('alpha_to_cl_full.csv', newline='') as f:
     reader = csv.reader(f)
