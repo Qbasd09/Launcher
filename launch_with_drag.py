@@ -26,31 +26,32 @@ for i in data:
     vVer = v * math.sin(RadAlpha)
    
     t = np.linspace(0, 20, 500)
+
     def vHor_t(Cd, t):
         speed = 1 / (coef * t * Cd + 1/vHor)
    
-        return speed    
-    def F_lift(Cl):
+        return speed
+
+    def F_lift(Cl, Cd, t):
         lift = Cl * ro * vHor_t(Cd, t)**2 * A * 0.5
+
         return lift
    
-    def vVer_t(vVer, t):
-        speed = vVer + (g + F_lift(Cl)/m) * t
+    def vVer_t(vVer, Cl, Cd, t):
+        speed = vVer + (g + F_lift(Cl, Cd, t)/m) * t
+
         return speed
+        
     def h(t):
-        h = 1.5 + vVer * t + g * t**2 / 2 + coef * Cl /(1.2034725 * Cd) * math.log(t) + 2 * coef * Cl / (1.2034725 * Cd * vHor) * t + coef * Cl / (2 * vHor**2) * t**2
-        if 0.1 > h > -0.1:
-            time = t
-            return time
+        h = 1.5 + vVer * t + g * t**2 / 2 + coef * Cl /(1.2034725 * Cd) * np.emath.log(t) + 2 * coef * Cl / (1.2034725 * Cd * vHor) * t + coef * Cl / (2 * vHor**2) * t**2
+        
+        return h
 
-    t = h(t)
-    speed = vVer_t(vVer, t)
-
-    plt.figure(figsize=(10, 6))
-    plt.plot(t, speed, label=f"$vert(t)$ (Velocity) at {Alpha}", color="green")
-    plt.title("Velocity $v(t)$ over 20 Seconds", fontsize=14)
-    plt.xlabel("Time (s)", fontsize=12)
-    plt.ylabel("Velocity (m/s)", fontsize=12)
-    plt.grid(True)
-    plt.legend(fontsize=12)
-    plt.show()
+    # plt.figure(figsize=(10, 6))
+    # plt.plot(t, h, label=f"$vert(t)$ (Velocity) at {Alpha}", color="green")
+    # plt.title("height over time", fontsize=14)
+    # plt.xlabel("Time (s)", fontsize=12)
+    # plt.ylabel("height", fontsize=12)
+    # plt.grid(True)
+    # plt.legend(fontsize=12)
+    # plt.show()
