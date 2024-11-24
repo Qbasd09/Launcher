@@ -1,5 +1,7 @@
 import math
 import csv
+import numpy as np
+import matplotlib.pyplot as plt
 
 ro = 1.204
 A = 0.03
@@ -11,15 +13,16 @@ with open('alpha_to_cl.csv', newline='') as f:
     reader = csv.reader(f)
     data = list(reader)
 
+angdist = []
 
 for i in data:
     Alpha = float(i[0])
     Cl = float(i[1])
     Cd = float(i[2])
     
-    F_lift = 1000 
-    v = 8
 
+    F_lift = 1000 
+    v = 9.67
 
     while abs(F_g) < F_lift:
 
@@ -40,7 +43,7 @@ for i in data:
 
     h0 = 1.5
     h = 0
-    tLaunchAngle = 0.5
+    tLaunchAngle = 1.5
 
     h1 = h0 + vVer * tLaunchAngle - 0.5 * a_v * tLaunchAngle**2
     vVer1 = 0
@@ -48,4 +51,13 @@ for i in data:
 
     d = vHor*((vVer1 + (vVer1**2 + 2 * h1 * a_v0)**0.5)/a_v0) + d1
 
-    print(f"{Alpha:.2f}, {h1:.2f}, {a_v:.2f}, {h1:.2f}, {d1:.2f}, {d:.2f}, {vHor:.2f}, {vVer:.2f}")
+    angdist.append([Alpha, d])
+
+    # print(f"{Alpha:.2f}, {h1:.2f}, {a_v:.2f}, {h1:.2f}, {d1:.2f}, {d:.2f}, {vHor:.2f}, {vVer:.2f}")
+
+arr = np.array(angdist)
+
+plt.plot(arr[:, 0], arr[:, 1])
+plt.ylabel("Distance $m$")
+plt.xlabel("Angle")
+plt.show()
