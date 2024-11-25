@@ -4,7 +4,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 rho = 1.204
-A = 0.03
+A = 0.03325
 m = 0.035
 coef = rho * A /(2 * m)
 
