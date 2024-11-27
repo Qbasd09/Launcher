@@ -19,6 +19,9 @@ for i in data:
     Cl = float(i[1])
     Cd = float(i[2])
  
+    if Alpha == 0:
+        Cd0 = Cd
+
     v = 9.67
 
     RadAlpha = math.radians(Alpha)
@@ -54,7 +57,7 @@ for i in data:
 
     while t0 <= t:
         t0 += 0.01 * t
-        vHor2 = 1 / (coef * t0 * Cd + 1/vHor2)
+        vHor2 = 1 / (coef * t0 * Cd0 + 1/vHor2)
         d2 = vHor2 * t1 + d2
 
     d = d1 + d2
