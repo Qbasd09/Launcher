@@ -38,12 +38,12 @@ for i in data:
 
     t = (2 * h1/a)**0.5
 
-    t0 = 0.1 * t
+    t0 = 0.01 * t
     t1 = t0
     d2 = 0
 
     while t0 < t:
-        t0 += 0.1 * t
+        t0 += 0.01 * t
         vHor1 = 1 / (coef * t0 * Cd + 1/vHor1)
         d2 = vHor1 * t1 + d2
 
