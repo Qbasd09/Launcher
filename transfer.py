@@ -20,7 +20,7 @@ while vPlane < targetV:
 
     if vPlane > vmax:
         print(f"The maximum possible velocity is {vPlaneMax:.2f} m/s")
-        print(f"When i = {iMax:.2f} and h = {h:.2f} m")
+        print(f"When i = {iMax:.2f} and h = {hMax:.2f} m")
         break
     elif vPlane < targetV:
         hMax = h
